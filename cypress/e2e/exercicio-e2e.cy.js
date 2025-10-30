@@ -1,5 +1,8 @@
 /// <reference types="cypress" />
 
+import produtosPage from '../support/page-objects/produtos.page';
+
+
 context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
   /*  Como cliente 
       Quero acessar a Loja EBAC 
@@ -10,11 +13,16 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
       E validando minha compra ao final */
 
   beforeEach(() => {
-      cy.visit('/')
+      cy.visit('/produtos')
   });
 
   it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
-      //TODO: Coloque todo o fluxo de teste aqui, considerando as boas práticas e otimizações
+        cy.efetuarPedidoProdutos(["Autumn Pullie", "Caesar Warm-Up Pant"]);
+      cy.get('.cart_item, .woocommerce-cart-form__cart-item').should('have.length.at.least', 1);
+      cy.get('a[href*="checkout"], .checkout-button, .wc-proceed-to-checkout a, .proceed-to-checkout').first().click();
+      cy.preencherCheckoutComFaker();
+      cy.finalizarCompra();
+
       
   });
 

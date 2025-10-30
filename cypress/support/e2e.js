@@ -18,3 +18,7 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+import './commands';
+// se quiser, importa também os page objects para uso direto no devtools:
+import './page-objects/produtos.page';
+import './page-objects/checkout.page';

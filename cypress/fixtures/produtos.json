@@ -1,0 +1,27 @@
+[
+ {
+  "nomeProduto": "Autumn Pullie",
+  "tamanho": "L", 
+   "cor": "Purple",
+   "quantidade":1
+ },
+  {
+  "nomeProduto": "Caesar Warm-Up Pant",
+  "tamanho": "34",
+  "cor": "Black",
+  "quantidade":3
+  },
+ {
+  "nomeProduto": "Balboa Persistence Tee",
+  "tamanho": "XL",
+  "cor": "Orange",
+  "quantidade":5
+ },
+ {
+  "nomeProduto": "Cassia Funnel Sweatshirt",
+  "tamanho": "XS",
+  "cor": "White",
+  "quantidade":2
+ }
+   
+]
