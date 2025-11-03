@@ -19,15 +19,10 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
   it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
          cy.efetuarPedidoProdutos([ { nome: 'Autumn Pullie', tamanho: 'M', cor: 'Red', quantidade: 1 }]);
       cy.get('.cart_item, .woocommerce-cart-form__cart-item').should('have.length.at.least', 1);
-      cy.get('a[href*="checkout"]', { timeout: 10000 })
-  .should('exist')
-  .then($el => {
-    if ($el.is(':hidden')) {
-      cy.wrap($el).invoke('removeAttr', 'style').click({ force: true })
-    } else {
-      cy.wrap($el).click({ force: true })
-    }
-  });
+      cy.get('.checkout-button', { timeout: 10000 })
+      .should('be.visible')
+      .click({ force: true });
+
 
       cy.preencherCheckoutComFaker();
       cy.finalizarCompra();
