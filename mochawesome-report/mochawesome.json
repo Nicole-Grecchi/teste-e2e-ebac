@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-02-10T15:02:07.158Z",
+    "end": "2026-02-10T15:03:02.644Z",
+    "duration": 55486,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ae292a5f-3026-4045-830c-d1a26b25c095",
+      "title": "",
+      "fullFile": "cypress/e2e/exercicio-e2e.cy.js",
+      "file": "cypress/e2e/exercicio-e2e.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "155f3dc4-0466-471b-ab90-4e7a1601f2dc",
+          "title": "Exercicio - Testes End-to-end - Fluxo de pedido",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve fazer um pedido na loja Ebac Shop de ponta a ponta",
+              "fullTitle": "Exercicio - Testes End-to-end - Fluxo de pedido Deve fazer um pedido na loja Ebac Shop de ponta a ponta",
+              "timedOut": null,
+              "duration": 55357,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.efetuarPedidoProdutos([{\n  nome: 'Autumn Pullie',\n  tamanho: 'M',\n  cor: 'Red',\n  quantidade: 1\n}]);\ncy.get('.cart_item, .woocommerce-cart-form__cart-item').should('have.length.at.least', 1);\ncy.get('.checkout-button', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.preencherCheckoutComFaker();\ncy.finalizarCompra();",
+              "err": {},
+              "uuid": "bcaa832e-f3d9-417b-86ac-4c9137594fcb",
+              "parentUUID": "155f3dc4-0466-471b-ab90-4e7a1601f2dc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bcaa832e-f3d9-417b-86ac-4c9137594fcb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 55357,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.3.2"
+    }
+  }
+}
