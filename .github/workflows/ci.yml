@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      BASE_URL: https://lojaebac.ebaconline.art.br
+     BASE_URL: ${{ secrets.BASE_URL }}
 
     steps:
       - name: Checkout do código
