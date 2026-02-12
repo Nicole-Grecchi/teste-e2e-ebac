@@ -20,26 +20,3 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-
-      - name: Cache do Cypress
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/Cypress
-          key: cypress-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
-
-      - name: Instalar dependências
-        run: npm install
-
-      - name: Instalar binário do Cypress
-        run: npx cypress install
-
-      - name: Executar testes com Mochawesome
-        run: npx cypress run --reporter mochawesome
-
-      - name: Upload do relatório
-        uses: actions/upload-artifact@v4
-        with:
-          name: relatorio-testes
-          path: mochawesome-report
-
-
